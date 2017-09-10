@@ -1,2 +1,2 @@
 # LibPostalNet
-C# bindings for libpostal
+C# bindings for libpostal (https://github.com/openvenues/libpostal)
