@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,12 +17,7 @@ namespace LibPostalConsole
 
             var response = libpostal.LibpostalParseAddress("781 Franklin Ave Crown Heights Brooklyn NYC NY 11216 USA", new LibpostalAddressParserOptions());
 
-            unsafe
-            {
-                //How to convert this?
-
-                var x = response.Components;
-            }
+            var x = response.Results;
 
             libpostal.LibpostalAddressParserResponseDestroy(response);
 

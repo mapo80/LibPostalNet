@@ -16,3 +16,6 @@ C:\Users\mapo_000\Documents\Visual Studio 2015\Projects\LibPostalNet\LibPostalCo
 C:\Users\mapo_000\Documents\Visual Studio 2015\Projects\LibPostalNet\LibPostalConsole\bin\x64\Debug\LibPostalNet.dll
 C:\Users\mapo_000\Documents\Visual Studio 2015\Projects\LibPostalNet\LibPostalConsole\bin\x64\Debug\LibPostalNet.pdb
 C:\Users\mapo_000\Documents\Visual Studio 2015\Projects\LibPostalNet\LibPostalConsole\obj\x64\Debug\LibPostalConsole.csprojResolveAssemblyReference.cache
+C:\Users\mapo_000\Documents\GitHub\LibPostalNet\LibPostalConsole\bin\x64\Debug\LibPostalConsole.exe.config
+C:\Users\mapo_000\Documents\GitHub\LibPostalNet\LibPostalConsole\obj\x64\Debug\LibPostalConsole.exe
+C:\Users\mapo_000\Documents\GitHub\LibPostalNet\LibPostalConsole\obj\x64\Debug\LibPostalConsole.pdb
