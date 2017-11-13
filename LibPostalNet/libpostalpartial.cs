@@ -20,7 +20,7 @@ namespace LibPostalNet
                     for (int buc = 0; buc < (int)NumLanguages; buc++)
                     {
                         sbyte* pLang = Languages[buc];
-                        _lang.Add(Marshal.PtrToStringAuto((IntPtr)pLang));
+                        _lang.Add(Marshal.PtrToStringAnsi((IntPtr)pLang));
                     }
                 }
 
@@ -43,7 +43,7 @@ namespace LibPostalNet
                         sbyte* pLabel = Labels[buc];
                         sbyte* pComponent = Components[buc];
 
-                        _results.Add(Marshal.PtrToStringAuto((IntPtr)pLabel), Marshal.PtrToStringAuto((IntPtr)pComponent));
+                        _results.Add(Marshal.PtrToStringAnsi((IntPtr)pLabel), Marshal.PtrToStringAnsi((IntPtr)pComponent));
                     }
                 }
 
