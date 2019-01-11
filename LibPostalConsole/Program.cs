@@ -10,6 +10,10 @@ namespace LibPostalConsole
 {
     class Program
     {
+        /// <summary>
+        /// An example of using the LibPostalNet library
+        /// </summary>
+        /// <param name="args">args[0] should be the path to libpostal data files</param>
         static void Main(string[] args)
         {
             if (args.Length > 0)
@@ -28,7 +32,6 @@ namespace LibPostalConsole
 
             var query = "Av. Beira Mar 1647 - Salgueiros, 4400-382 Vila Nova de Gaia";
 
-
             var response = libpostal.LibpostalParseAddress(query, new LibpostalAddressParserOptions());
 
             var x = response.Results;
@@ -36,17 +39,11 @@ namespace LibPostalConsole
             {
                 Console.WriteLine(result.ToString());
             }
-
-            unsafe
+            
+            var expansions = libpostal.LibpostalExpandAddress(query, libpostal.LibpostalGetDefaultOptions());
+            foreach (var s in expansions.Results)
             {
-                ulong n = ulong.MinValue;
-                var expansions = libpostal.LibpostalExpandAddress(query, libpostal.LibpostalGetDefaultOptions(), ref n);
-                for (ulong i = 0; i < n; i++)
-                {
-                    var normalized = new IntPtr(expansions[i]);
-                    var str = Marshal.PtrToStringAnsi(normalized);
-                    Console.WriteLine(str);
-                }
+                Console.WriteLine(s);
             }
 
             libpostal.LibpostalAddressParserResponseDestroy(response);
