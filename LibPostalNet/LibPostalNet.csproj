@@ -65,7 +65,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="LibPostalNet-symbols.cpp" />
     <Content Include="postal.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

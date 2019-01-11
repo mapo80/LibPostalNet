@@ -9,3 +9,9 @@ C:\Users\mapo_000\Documents\Visual Studio 2015\Projects\LibPostalNet\LibPostalNe
 C:\Users\mapo_000\Documents\Visual Studio 2015\Projects\LibPostalNet\LibPostalNet\obj\x64\Debug\LibPostalNet.dll
 C:\Users\mapo_000\Documents\Visual Studio 2015\Projects\LibPostalNet\LibPostalNet\obj\x64\Debug\LibPostalNet.pdb
 C:\Users\mapo_000\Documents\Visual Studio 2015\Projects\LibPostalNet\LibPostalNet\obj\x64\Debug\LibPostalNet.csprojResolveAssemblyReference.cache
+C:\Users\Mike\Source\Repos\LibPostalNet\LibPostalNet\bin\x64\Debug\postal.dll
+C:\Users\Mike\Source\Repos\LibPostalNet\LibPostalNet\bin\x64\Debug\LibPostalNet.dll
+C:\Users\Mike\Source\Repos\LibPostalNet\LibPostalNet\bin\x64\Debug\LibPostalNet.pdb
+C:\Users\Mike\Source\Repos\LibPostalNet\LibPostalNet\obj\x64\Debug\LibPostalNet.csproj.CoreCompileInputs.cache
+C:\Users\Mike\Source\Repos\LibPostalNet\LibPostalNet\obj\x64\Debug\LibPostalNet.dll
+C:\Users\Mike\Source\Repos\LibPostalNet\LibPostalNet\obj\x64\Debug\LibPostalNet.pdb
