@@ -39,15 +39,15 @@ namespace LibPostalConsole
             {
                 Console.WriteLine(result.ToString());
             }
-            
-            var expansions = libpostal.LibpostalExpandAddress(query, libpostal.LibpostalGetDefaultOptions());
-            foreach (var s in expansions.Results)
-            {
-                Console.WriteLine(s);
-            }
 
             libpostal.LibpostalAddressParserResponseDestroy(response);
 
+            var expansion = libpostal.LibpostalExpandAddress(query, libpostal.LibpostalGetDefaultOptions());
+            foreach (var s in expansion.Expansions)
+            {
+                Console.WriteLine(s);
+            }
+            
             // Teardown (only called once at the end of your program)
             libpostal.LibpostalTeardown();
             libpostal.LibpostalTeardownParser();

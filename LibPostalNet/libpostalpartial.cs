@@ -29,17 +29,6 @@ namespace LibPostalNet
         }
     }
 
-    public partial class LibpostalNormalizeResponse
-    {
-        public List<string> Results
-        {
-            get
-            {
-                return new List<string>(Expansions);
-            }
-        }
-    }
-
     public partial class LibpostalAddressParserResponse
     {
         public List<KeyValuePair<string, string>> Results
