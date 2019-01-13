@@ -28,13 +28,25 @@ namespace LibPostalNet
             }
         }
     }
-    public partial class LibpostalAddressParserResponse
+
+    public partial class LibpostalNormalizeResponse
     {
-        public Dictionary<string, string> Results
+        public List<string> Results
         {
             get
             {
-                var _results = new Dictionary<string, string>();
+                return new List<string>(Expansions);
+            }
+        }
+    }
+
+    public partial class LibpostalAddressParserResponse
+    {
+        public List<KeyValuePair<string, string>> Results
+        {
+            get
+            {
+                var _results = new List<KeyValuePair<string, string>>();
 
                 unsafe
                 {
@@ -43,7 +55,7 @@ namespace LibPostalNet
                         sbyte* pLabel = Labels[buc];
                         sbyte* pComponent = Components[buc];
 
-                        _results.Add(Marshal.PtrToStringAnsi((IntPtr)pLabel), Marshal.PtrToStringAnsi((IntPtr)pComponent));
+                        _results.Add(new KeyValuePair<string, string>(Marshal.PtrToStringAnsi((IntPtr)pLabel), Marshal.PtrToStringAnsi((IntPtr)pComponent)));
                     }
                 }
 

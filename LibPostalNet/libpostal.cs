@@ -10,6 +10,32 @@ using System.Security;
 
 namespace LibPostalNet
 {
+    public unsafe partial class LibpostalNormalizeResponse
+    {
+        internal static global::LibPostalNet.LibpostalNormalizeResponse __CreateInstance(global::System.SByte** native, global::System.UInt64 count)
+        {
+            var expansions = new string[count];
+            for (ulong i = 0; i < count; i++)
+            {
+                var normalized = new IntPtr(native[i]);
+                var str = Marshal.PtrToStringAnsi(normalized);
+                expansions[i] = str;
+            }
+
+            return new global::LibPostalNet.LibpostalNormalizeResponse(expansions, count);
+        }
+
+        protected LibpostalNormalizeResponse(string[] expansions, global::System.UInt64 count)
+        {
+            Expansions = expansions;
+            NumComponents = count;
+        }
+
+        public ulong NumComponents { get; set; }
+
+        public string[] Expansions { get; private set; }
+    }
+
     public unsafe partial class LibpostalNormalizeOptions : IDisposable
     {
         [StructLayout(LayoutKind.Explicit, Size = 40)]
@@ -783,15 +809,15 @@ namespace LibPostalNet
             return global::LibPostalNet.LibpostalNormalizeOptions.__CreateInstance(__ret);
         }
 
-        public static sbyte** LibpostalExpandAddress(string input, global::LibPostalNet.LibpostalNormalizeOptions options, ref ulong n)
+        public static global::LibPostalNet.LibpostalNormalizeResponse LibpostalExpandAddress(string input, global::LibPostalNet.LibpostalNormalizeOptions options)
         {
             var __arg1 = ReferenceEquals(options, null) ? new global::LibPostalNet.LibpostalNormalizeOptions.__Internal() : *(global::LibPostalNet.LibpostalNormalizeOptions.__Internal*)options.__Instance;
-            fixed (ulong* __refParamPtr2 = &n)
-            {
-                var __arg2 = __refParamPtr2;
-                var __ret = __Internal.LibpostalExpandAddress(input, __arg1, __arg2);
-                return __ret;
-            }
+            ulong n = ulong.MinValue;
+            var __ret = __Internal.LibpostalExpandAddress(input, __arg1, &n);
+            global::LibPostalNet.LibpostalNormalizeResponse __result0;
+            if (n == (ulong)0) __result0 = null;
+            __result0 = global::LibPostalNet.LibpostalNormalizeResponse.__CreateInstance(__ret, n);
+            return __result0;
         }
 
         public static void LibpostalExpansionArrayDestroy(sbyte** expansions, ulong n)
