@@ -1,5 +1,4 @@
 # LibPostalNet
 C# bindings for libpostal (https://github.com/openvenues/libpostal)
 
-
-All trained data files are in /TrainedData
+Credit to https://github.com/mapo80 and https://github.com/mapo80/LibPostalNet

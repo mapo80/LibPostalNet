@@ -22,16 +22,15 @@ namespace LibPostalNet
                 expansions[i] = str;
             }
 
-            return new global::LibPostalNet.LibpostalNormalizeResponse(expansions, count);
+            libpostal.LibpostalExpansionArrayDestroy(native, count);
+
+            return new global::LibPostalNet.LibpostalNormalizeResponse(expansions);
         }
 
-        protected LibpostalNormalizeResponse(string[] expansions, global::System.UInt64 count)
+        protected LibpostalNormalizeResponse(string[] expansions)
         {
             Expansions = expansions;
-            NumComponents = count;
         }
-
-        public ulong NumComponents { get; set; }
 
         public string[] Expansions { get; private set; }
     }
@@ -812,12 +811,13 @@ namespace LibPostalNet
         public static global::LibPostalNet.LibpostalNormalizeResponse LibpostalExpandAddress(string input, global::LibPostalNet.LibpostalNormalizeOptions options)
         {
             var __arg1 = ReferenceEquals(options, null) ? new global::LibPostalNet.LibpostalNormalizeOptions.__Internal() : *(global::LibPostalNet.LibpostalNormalizeOptions.__Internal*)options.__Instance;
-            ulong n = ulong.MinValue;
-            var __ret = __Internal.LibpostalExpandAddress(input, __arg1, &n);
+            var __arg2 = new ulong();
+            var __ret = __Internal.LibpostalExpandAddress(input, __arg1, &__arg2);
             global::LibPostalNet.LibpostalNormalizeResponse __result0;
-            if (n == (ulong)0) __result0 = null;
-            __result0 = global::LibPostalNet.LibpostalNormalizeResponse.__CreateInstance(__ret, n);
+            if (__arg2 == (ulong)0) __result0 = null;
+            __result0 = global::LibPostalNet.LibpostalNormalizeResponse.__CreateInstance(__ret, __arg2);
             return __result0;
+            
         }
 
         public static void LibpostalExpansionArrayDestroy(sbyte** expansions, ulong n)
