@@ -44,7 +44,7 @@ namespace LibPostalNet
                         sbyte* pLabel = Labels[buc];
                         sbyte* pComponent = Components[buc];
 
-                        _results.Add(new KeyValuePair<string, string>(Marshal.PtrToStringAnsi((IntPtr)pLabel), Marshal.PtrToStringAnsi((IntPtr)pComponent)));
+                        _results.Add(new KeyValuePair<string, string>(Marshal.PtrToStringUTF8((IntPtr)pLabel), Marshal.PtrToStringUTF8((IntPtr)pComponent)));
                     }
                 }
 

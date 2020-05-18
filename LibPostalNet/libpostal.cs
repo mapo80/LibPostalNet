@@ -727,7 +727,7 @@ namespace LibPostalNet
             [SuppressUnmanagedCodeSecurity]
             [DllImport("postal", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "libpostal_expand_address")]
-            internal static extern sbyte** LibpostalExpandAddress([MarshalAs(UnmanagedType.LPStr)] string input, global::LibPostalNet.LibpostalNormalizeOptions.__Internal options, ulong* n);
+            internal static extern sbyte** LibpostalExpandAddress([MarshalAs(UnmanagedType.LPUTF8Str)] string input, global::LibPostalNet.LibpostalNormalizeOptions.__Internal options, ulong* n);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("postal", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
@@ -747,7 +747,7 @@ namespace LibPostalNet
             [SuppressUnmanagedCodeSecurity]
             [DllImport("postal", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "libpostal_parse_address")]
-            internal static extern global::System.IntPtr LibpostalParseAddress([MarshalAs(UnmanagedType.LPStr)] string address, global::LibPostalNet.LibpostalAddressParserOptions.__Internal options);
+            internal static extern global::System.IntPtr LibpostalParseAddress([MarshalAs(UnmanagedType.LPUTF8Str)] string address, global::LibPostalNet.LibpostalAddressParserOptions.__Internal options);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("postal", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
@@ -759,7 +759,7 @@ namespace LibPostalNet
             [DllImport("postal", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "libpostal_setup_datadir")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool LibpostalSetupDatadir([MarshalAs(UnmanagedType.LPStr)] string datadir);
+            internal static extern bool LibpostalSetupDatadir([MarshalAs(UnmanagedType.LPUTF8Str)] string datadir);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("postal", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
@@ -776,7 +776,7 @@ namespace LibPostalNet
             [DllImport("postal", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "libpostal_setup_parser_datadir")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool LibpostalSetupParserDatadir([MarshalAs(UnmanagedType.LPStr)] string datadir);
+            internal static extern bool LibpostalSetupParserDatadir([MarshalAs(UnmanagedType.LPUTF8Str)] string datadir);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("postal", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
@@ -793,7 +793,7 @@ namespace LibPostalNet
             [DllImport("postal", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "libpostal_setup_language_classifier_datadir")]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool LibpostalSetupLanguageClassifierDatadir([MarshalAs(UnmanagedType.LPStr)] string datadir);
+            internal static extern bool LibpostalSetupLanguageClassifierDatadir([MarshalAs(UnmanagedType.LPUTF8Str)] string datadir);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("postal", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
