@@ -9,6 +9,10 @@ https://github.com/openvenues/libpostal/tree/master/data if you have not already
 Once you have the files downloaded, compile and run LibPostalConsole on the command line with 1 argument - 
 the path to the data directory.
 
+```
+.\LibPostalConsole.exe C:\LibPostalData
+```
+
 ### Compiling libpostal on Windows
 
 Follow the instructions here: https://github.com/openvenues/libpostal#installation-windows
