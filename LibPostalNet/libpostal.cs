@@ -185,6 +185,26 @@ namespace LibPostalNet
             __Instance = IntPtr.Zero;
         }
 
+        // These constants are copied from libposta.h
+        // TODO: Find a way to import the constants from the C library directly
+        public const ushort LIBPOSTAL_ADDRESS_NONE = 0;
+        public const ushort LIBPOSTAL_ADDRESS_ANY = (1 << 0);
+        public const ushort LIBPOSTAL_ADDRESS_NAME = (1 << 1);
+        public const ushort LIBPOSTAL_ADDRESS_HOUSE_NUMBER = (1 << 2);
+        public const ushort LIBPOSTAL_ADDRESS_STREET = (1 << 3);
+        public const ushort LIBPOSTAL_ADDRESS_UNIT = (1 << 4);
+        public const ushort LIBPOSTAL_ADDRESS_LEVEL = (1 << 5);
+        public const ushort LIBPOSTAL_ADDRESS_STAIRCASE = (1 << 6);
+        public const ushort LIBPOSTAL_ADDRESS_ENTRANCE = (1 << 7);
+
+        public const ushort LIBPOSTAL_ADDRESS_CATEGORY = (1 << 8);
+        public const ushort LIBPOSTAL_ADDRESS_NEAR = (1 << 9);
+
+        public const ushort LIBPOSTAL_ADDRESS_TOPONYM = (1 << 13);
+        public const ushort LIBPOSTAL_ADDRESS_POSTAL_CODE = (1 << 14);
+        public const ushort LIBPOSTAL_ADDRESS_PO_BOX = (1 << 15);
+        public const ushort LIBPOSTAL_ADDRESS_ALL = ((1 << 16) - 1);
+
         public sbyte** Languages
         {
             get
@@ -717,6 +737,7 @@ namespace LibPostalNet
 
     public unsafe partial class libpostal
     {
+
         public partial struct __Internal
         {
             [SuppressUnmanagedCodeSecurity]
